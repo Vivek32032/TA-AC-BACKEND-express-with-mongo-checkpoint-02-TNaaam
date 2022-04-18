@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Event List</title>
+</head>
+<body>
+    <%- include('../partials/header') -%>
+
+    <main>
+        <h1 class="text-4xl mb-7 text-pink-500 m-auto text-center">Event List</h1>
+        <ul class="">
+            <% events.forEach(event => { %>
+                <li class="text-2xl mb-10 w-4/12 p-4 bg-emerald-300">
+                    <a class="" href="/events/<%= event.id %>"><%= event.title %></a>
+                    <div class="flex justify-between">
+                    <a class="px-3 mx-1 py-2 bg-green-500 rounded text-white font-bold hover:border-2 border-green-800 text-sm"  href="/events/<%= event.id %>/edit">Edit</a>
+                    <a class="px-3 mx-1 py-2 bg-red-500 rounded text-white font-bold hover:border-2 text-sm border-red-700"  href="/events/<%= event.id %>/delete">Delete</a>
+                    </div>
+                </li>
+
+                <form action="/remarks">
+                    <textarea name="remarks" id="remarks" cols="30" rows="5" placeholder="Add remarks"></textarea>
+                </form>
+
+                
+
+            <% }) %>
+        </ul>
+    </main>
+
+</body>
+</html>
+
+<%- include('../partials/footer') -%>

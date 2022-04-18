@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Add Event</title>
+
+</head>
+<body>
+<%- include('../partials/header') -%>
+    <main>
+        <div>
+        <form action="/events/new" method="POST" class="w-1/2 mx-auto my-0 p-7 bg-blue-300">
+            <fieldset class="flex flex-col">
+                  <legend class="text-rose-600 font-bold text-3xl m-auto mb-5 " >Add Events</legend>
+                  <input class="my-3 p-3" type="text" name="title" placeholder="Enter event">
+                  <textarea class="my-3 p-3"  name="summary" id="" cols="30" rows="5" placeholder="summary"></textarea>
+                  <input class="my-3 p-3" type="text" name="host" placeholder="Enter Host Name">
+                  <fieldset class="flex justify-between">
+                      <label for="startDate">Start Date
+                          <input class="my-3 p-3" id="startDate" type="date" name="start_date" placeholder="start date">
+                      </label>
+                      <label for="endDate" >End Date
+                          <input class="my-3 p-3" id="endDate" type="date" name="end_date" placeholder="end date">                           
+
+                      </label>
+                  </fieldset>
+
+                  <input class="my-3 p-3" type="text" name="location" placeholder="Enter location">      
+                  <input class="my-3 p-3 bg-pink-500 text-white text-2xl font-bold" type="submit" value="SUBMIT">     
+            </fieldset>
+
+        </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
+
+<%- include('../partials/footer') -%>
